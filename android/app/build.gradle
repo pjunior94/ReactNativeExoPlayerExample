@@ -144,6 +144,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     //exoplayer
+    implementation 'com.android.volley:volley:1.1.1'
 
     implementation 'com.google.android.exoplayer:exoplayer-core:2.7.3'
     implementation 'com.google.android.exoplayer:exoplayer-dash:2.7.3'
