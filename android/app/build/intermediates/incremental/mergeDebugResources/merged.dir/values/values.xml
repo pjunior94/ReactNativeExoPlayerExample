@@ -151,6 +151,7 @@
     <enum name="none" value="0"/>
     <enum name="surface_view" value="1"/>
     <enum name="texture_view" value="2"/>
+    <enum name="spherical_view" value="3"/>
   </attr>
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
@@ -182,6 +183,7 @@
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
     <color name="exo_edit_mode_background_color">#FFF4F3F0</color>
+    <color name="exo_error_message_background_color">#AA000000</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
@@ -200,6 +202,7 @@
     <color name="material_grey_900">#ff212121</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -336,6 +339,19 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+    <drawable name="exo_controls_fastforward">@drawable/exo_icon_fastforward</drawable>
+    <drawable name="exo_controls_next">@drawable/exo_icon_next</drawable>
+    <drawable name="exo_controls_pause">@drawable/exo_icon_pause</drawable>
+    <drawable name="exo_controls_play">@drawable/exo_icon_play</drawable>
+    <drawable name="exo_controls_previous">@drawable/exo_icon_previous</drawable>
+    <drawable name="exo_controls_rewind">@drawable/exo_icon_rewind</drawable>
+    <drawable name="exo_notification_fastforward">@drawable/exo_icon_fastforward</drawable>
+    <drawable name="exo_notification_next">@drawable/exo_icon_next</drawable>
+    <drawable name="exo_notification_pause">@drawable/exo_icon_pause</drawable>
+    <drawable name="exo_notification_play">@drawable/exo_icon_play</drawable>
+    <drawable name="exo_notification_previous">@drawable/exo_icon_previous</drawable>
+    <drawable name="exo_notification_rewind">@drawable/exo_icon_rewind</drawable>
+    <drawable name="exo_notification_stop">@drawable/exo_icon_stop</drawable>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="accessibility_hint" type="id"/>
@@ -345,10 +361,12 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="exo_artwork" type="id"/>
+    <item name="exo_buffering" type="id"/>
     <item name="exo_content_frame" type="id"/>
     <item name="exo_controller" type="id"/>
     <item name="exo_controller_placeholder" type="id"/>
     <item name="exo_duration" type="id"/>
+    <item name="exo_error_message" type="id"/>
     <item name="exo_ffwd" type="id"/>
     <item name="exo_next" type="id"/>
     <item name="exo_overlay" type="id"/>
@@ -449,6 +467,7 @@
     <string name="catalyst_settings" project="catalyst" translatable="false">Dev Settings</string>
     <string name="catalyst_settings_title" project="catalyst" translatable="false">Catalyst Dev Settings</string>
     <string name="exo_controls_fastforward_description">Fast forward</string>
+    <string name="exo_controls_fullscreen_description">Fullscreen mode</string>
     <string name="exo_controls_next_description">Next track</string>
     <string name="exo_controls_pause_description">Pause</string>
     <string name="exo_controls_play_description">Play</string>
@@ -459,6 +478,26 @@
     <string name="exo_controls_rewind_description">Rewind</string>
     <string name="exo_controls_shuffle_description">Shuffle</string>
     <string name="exo_controls_stop_description">Stop</string>
+    <string name="exo_download_completed">Download completed</string>
+    <string name="exo_download_description">Download</string>
+    <string name="exo_download_downloading">Downloading</string>
+    <string name="exo_download_failed">Download failed</string>
+    <string name="exo_download_notification_channel_name">Downloads</string>
+    <string name="exo_download_removing">Removing downloads</string>
+    <string name="exo_item_list"><ns1:g example="apple, pear" id="list">%1$s</ns1:g>, <ns1:g example="banana" id="item">%2$s</ns1:g></string>
+    <string name="exo_track_bitrate"><ns1:g example="5.2" id="bitrate">%1$.2f</ns1:g> Mbps</string>
+    <string name="exo_track_mono">Mono</string>
+    <string name="exo_track_resolution"><ns1:g example="1024" id="width">%1$d</ns1:g> × <ns1:g example="768" id="height">%2$d</ns1:g></string>
+    <string name="exo_track_selection_auto">Auto</string>
+    <string name="exo_track_selection_none">None</string>
+    <string name="exo_track_selection_title_audio">Audio</string>
+    <string name="exo_track_selection_title_text">Text</string>
+    <string name="exo_track_selection_title_video">Video</string>
+    <string name="exo_track_stereo">Stereo</string>
+    <string name="exo_track_surround">Surround sound</string>
+    <string name="exo_track_surround_5_point_1">5.1 surround sound</string>
+    <string name="exo_track_surround_7_point_1">7.1 surround sound</string>
+    <string name="exo_track_unknown">Unknown</string>
     <string name="image_button_description" translatable="false">Button, Image</string>
     <string name="image_description" translatable="false">Image</string>
     <string name="link_description" translatable="false">Link</string>
@@ -1857,12 +1896,17 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
     <style name="TextAppearance.Compat.Notification.Time">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
     <style name="TextAppearance.Widget.AppCompat.ExpandedMenu.Item" parent="Base.TextAppearance.Widget.AppCompat.ExpandedMenu.Item">
     </style>
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
@@ -3270,7 +3314,11 @@
         <attr format="reference" name="subMenuArrow"/>
     </declare-styleable>
     <declare-styleable name="PlayerControlView"><attr name="show_timeout"/><attr name="rewind_increment"/><attr name="fastforward_increment"/><attr name="repeat_toggle_modes"/><attr name="show_shuffle_button"/><attr name="controller_layout_id"/></declare-styleable>
-    <declare-styleable name="PlayerView"><attr format="boolean" name="use_artwork"/><attr format="color" name="shutter_background_color"/><attr format="reference" name="default_artwork"/><attr format="boolean" name="use_controller"/><attr format="boolean" name="hide_on_touch"/><attr format="boolean" name="hide_during_ads"/><attr format="boolean" name="auto_show"/><attr name="resize_mode"/><attr name="surface_type"/><attr name="player_layout_id"/><attr name="show_timeout"/><attr name="rewind_increment"/><attr name="fastforward_increment"/><attr name="repeat_toggle_modes"/><attr name="show_shuffle_button"/><attr name="controller_layout_id"/></declare-styleable>
+    <declare-styleable name="PlayerView"><attr format="boolean" name="use_artwork"/><attr format="color" name="shutter_background_color"/><attr format="reference" name="default_artwork"/><attr format="boolean" name="use_controller"/><attr format="boolean" name="hide_on_touch"/><attr format="boolean" name="hide_during_ads"/><attr format="boolean" name="auto_show"/><attr format="enum" name="show_buffering">
+      <enum name="never" value="0"/>
+      <enum name="when_playing" value="1"/>
+      <enum name="always" value="2"/>
+    </attr><attr format="boolean" name="keep_content_on_player_reset"/><attr name="resize_mode"/><attr name="surface_type"/><attr name="player_layout_id"/><attr name="show_timeout"/><attr name="rewind_increment"/><attr name="fastforward_increment"/><attr name="repeat_toggle_modes"/><attr name="show_shuffle_button"/><attr name="controller_layout_id"/></declare-styleable>
     <declare-styleable name="PopupWindow">
         <!-- Whether the popup window should overlap its anchor view. -->
         <attr format="boolean" name="overlapAnchor"/>

@@ -1,20 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:2:1-15:12
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\99973cad377c37d348cf2632191d9583\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.7.3.aar\ca5a79ba06aff5be16c1d95210e347f2\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.7.3.aar\d5ebecda8d36fab15ba9db2c721af636\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.7.3.aar\aefae00aadd4d631202c9e47bccc462c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.9.5.aar\9bfe333e3ac945d0ce6bffeaf607fc64\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.9.5.aar\13a8392a2008b5935eb0da5a8465a952\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.9.5.aar\cde8434e66bad028cb210be5dfec9655\AndroidManifest.xml:17:1-26:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\afe8e896d0e2c2a77f8b18ea124a7964\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\32375386961a1eae26a6374f8ce199be\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\cf15a87de17b8fd64ca9488d89b16505\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\620b8055e22a51236c7fbb95b2fb7e21\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\d6d7089d5aa233b0fe71171e48f9ab6e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\2e7f1300469a3f00f65303924e93e8e9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\465785dc30ec4fa0ae98e39bb7e03f4a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a7e0f617acd4803cd8c9ca10abc73233\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\d1441bd50548902babe6097947f8f2d7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\57c5ecf0b032b1080bab206cdb3e785a\AndroidManifest.xml:17:1-22:12
@@ -43,37 +44,37 @@ MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Developer\.
 MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\ee6351bd39d8f35bee69947fb9ec7ed2\AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\b08e96d28ee456aa33ebc4b243c33c61\AndroidManifest.xml:1:1-3:12
 MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\4933d9dbabcd2bcb22e9c2498275304d\AndroidManifest.xml:2:1-9:12
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
 	package
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:3:5-43
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:3:5-43
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:6:5-78
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:11:5-78
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:6:5-78
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:11:5-78
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:6:22-75
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:6:22-75
 application
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:8:5-28:19
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:13:5-20
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:8:5-28:19
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:13:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\afe8e896d0e2c2a77f8b18ea124a7964\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\afe8e896d0e2c2a77f8b18ea124a7964\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\e5d4eecbfec779ff294b358ee1ac9c95\AndroidManifest.xml:22:5-94
@@ -87,59 +88,59 @@ MERGED from [org.webkit:android-jsc:r174650] C:\Users\Developer\.gradle\caches\t
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\e5d4eecbfec779ff294b358ee1ac9c95\AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:10:9-36
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:10:9-36
 	android:theme
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:14:9-40
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:14:9-40
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:9:9-40
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:9:9-40
 activity#com.exoplayerreactnativejava.PlayerActivity
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:15:9-61
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:15:9-61
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:15:19-49
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:15:19-49
 activity#com.exoplayerreactnativejava.MainActivity
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:16:9-26:20
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:16:9-26:20
 	android:label
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:19:13-45
 	android:windowSoftInputMode
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:20:13-55
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:20:13-55
 	android:configChanges
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:18:13-83
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:18:13-83
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:17:13-41
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:24:27-74
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:27:9-86
+ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:27:9-86
 	android:name
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:27:19-83
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:27:19-83
 uses-sdk
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\e4764ee0a8922db7736f7c59fd069b5f\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.58.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\react-native-0.58.3.aar\9d9f9a99bcd1818c49a206263e1ba7b7\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\99973cad377c37d348cf2632191d9583\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\99973cad377c37d348cf2632191d9583\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.7.3.aar\ca5a79ba06aff5be16c1d95210e347f2\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.7.3.aar\ca5a79ba06aff5be16c1d95210e347f2\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.7.3.aar\d5ebecda8d36fab15ba9db2c721af636\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.7.3.aar\d5ebecda8d36fab15ba9db2c721af636\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.7.3.aar\aefae00aadd4d631202c9e47bccc462c\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.7.3.aar\aefae00aadd4d631202c9e47bccc462c\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.9.5.aar\9bfe333e3ac945d0ce6bffeaf607fc64\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.9.5.aar\9bfe333e3ac945d0ce6bffeaf607fc64\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.9.5.aar\13a8392a2008b5935eb0da5a8465a952\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.9.5.aar\13a8392a2008b5935eb0da5a8465a952\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.9.5.aar\cde8434e66bad028cb210be5dfec9655\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.9.5.aar\cde8434e66bad028cb210be5dfec9655\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\afe8e896d0e2c2a77f8b18ea124a7964\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\afe8e896d0e2c2a77f8b18ea124a7964\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\32375386961a1eae26a6374f8ce199be\AndroidManifest.xml:20:5-44
@@ -152,6 +153,8 @@ MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Developer\.
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\d6d7089d5aa233b0fe71171e48f9ab6e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\2e7f1300469a3f00f65303924e93e8e9\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\2e7f1300469a3f00f65303924e93e8e9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\465785dc30ec4fa0ae98e39bb7e03f4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\465785dc30ec4fa0ae98e39bb7e03f4a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a7e0f617acd4803cd8c9ca10abc73233\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a7e0f617acd4803cd8c9ca10abc73233\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\d1441bd50548902babe6097947f8f2d7\AndroidManifest.xml:20:5-44
@@ -206,19 +209,23 @@ MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Developer\.gradle\ca
 MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\ee6351bd39d8f35bee69947fb9ec7ed2\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\4933d9dbabcd2bcb22e9c2498275304d\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\4933d9dbabcd2bcb22e9c2498275304d\AndroidManifest.xml:5:5-7:41
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.exoplayer:exoplayer-core:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.9.5.aar\cde8434e66bad028cb210be5dfec9655\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.android.exoplayer:exoplayer-core:2.9.5] C:\Users\Developer\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.9.5.aar\cde8434e66bad028cb210be5dfec9655\AndroidManifest.xml:24:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\Cursos\Curso React-Native\labs\ExoPlayerReactNativeJava\android\app\src\main\AndroidManifest.xml:2:1-30:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\ReactNativeExoplayerExample\android\app\src\main\AndroidManifest.xml:2:1-30:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

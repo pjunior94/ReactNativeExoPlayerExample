@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Cursos\\Curso React-Native\\labs\\ExoPlayerReactNativeJava\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
+            "outputFile": "D:\\ReactNativeExoplayerExample\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Developer\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\e5d4eecbfec779ff294b358ee1ac9c95\\res\\values-or\\values-or.xml",
