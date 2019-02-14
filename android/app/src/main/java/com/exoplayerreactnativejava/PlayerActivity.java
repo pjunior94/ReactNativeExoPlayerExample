@@ -155,10 +155,8 @@ public class PlayerActivity extends AppCompatActivity {
         Uri uri = Uri.parse("https://media.axprod.net/TestVectors/v6-MultiDRM/Manifest_1080p.mpd");
         MediaSource source = buildMediaSource(uri);
 
-
-//        , drmSessionManager
         if (player == null) {
-            player = ExoPlayerFactory.newSimpleInstance(this, new DefaultRenderersFactory(this), new DefaultTrackSelector());
+            player = ExoPlayerFactory.newSimpleInstance(this, new DefaultRenderersFactory(this), new DefaultTrackSelector(), drmSessionManager);
             playerView.setPlayer(player);
             player.setPlayWhenReady(playWhenReady);
             player.seekTo(currentWindow, playbackPosition);
