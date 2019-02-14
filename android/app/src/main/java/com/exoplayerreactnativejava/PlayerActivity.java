@@ -16,20 +16,27 @@ import com.google.android.exoplayer2.drm.FrameworkMediaCrypto;
 import com.google.android.exoplayer2.drm.FrameworkMediaDrm;
 import com.google.android.exoplayer2.drm.HttpMediaDrmCallback;
 import com.google.android.exoplayer2.drm.UnsupportedDrmException;
+import com.google.android.exoplayer2.offline.FilteringManifestParser;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.dash.DashChunkSource;
 import com.google.android.exoplayer2.source.dash.DashMediaSource;
 import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource;
+import com.google.android.exoplayer2.source.dash.manifest.DashManifestParser;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
+import com.google.android.exoplayer2.upstream.cache.Cache;
+import com.google.android.exoplayer2.upstream.cache.NoOpCacheEvictor;
+import com.google.android.exoplayer2.upstream.cache.SimpleCache;
 import com.google.android.exoplayer2.util.Util;
 
+import java.io.File;
 import java.security.Key;
 import java.util.UUID;
 
@@ -57,7 +64,7 @@ public class PlayerActivity extends AppCompatActivity {
     protected String userAgent;
     private SimpleExoPlayer player;
     private PlayerView playerView;
-
+    private DataSource.Factory dataSourceFactory;
     private long playbackPosition;
     private int currentWindow;
     private boolean playWhenReady = true;
@@ -68,6 +75,7 @@ public class PlayerActivity extends AppCompatActivity {
         setContentView(R.layout.player_activity);
         userAgent = Util.getUserAgent(this, "ExoPlayerDemo");
         playerView = findViewById(R.id.video_view);
+        dataSourceFactory = buildDataSourceFactory();
     }
 
     @Override
@@ -107,7 +115,6 @@ public class PlayerActivity extends AppCompatActivity {
         return new DefaultHttpDataSourceFactory(userAgent);
     }
 
-
     private DefaultDrmSessionManager<FrameworkMediaCrypto> buildDrmSessionManagerV18(
             UUID uuid, String licenseUrl,
             String[] keyRequestPropertiesArray,
@@ -125,12 +132,16 @@ public class PlayerActivity extends AppCompatActivity {
         return new DefaultDrmSessionManager<>(uuid, mediaDrm, drmCallback, null, multiSession);
     }
 
+    public DataSource.Factory buildDataSourceFactory() {
+        return new DefaultDataSourceFactory(this, buildHttpDataSourceFactory());
+    }
+
+
     private void initializePlayer() {
         Intent intent = getIntent();
         DefaultDrmSessionManager<FrameworkMediaCrypto> drmSessionManager = null;
-        UUID drmSchemeUuid = Util.getDrmUuid(intent.getStringExtra("widevine"));
-        String[] keyRequestPropertiesArray = new String[]{};
-
+        UUID drmSchemeUuid = Util.getDrmUuid("widevine");
+        String[] keyRequestPropertiesArray = new String[]{"X-AxDRM-Message", LicenseToken};
 
         try {
             drmSessionManager =
@@ -140,14 +151,18 @@ public class PlayerActivity extends AppCompatActivity {
 
         }
 
+        Uri uri = Uri.parse("https://media.axprod.net/TestVectors/v6-MultiDRM/Manifest_1080p.mpd");
+        MediaSource source = buildMediaSource(uri);
+
+
+//        , drmSessionManager
         if (player == null) {
-            player = ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
+            player = ExoPlayerFactory.newSimpleInstance(this, new DefaultRenderersFactory(this), new DefaultTrackSelector());
             playerView.setPlayer(player);
             player.setPlayWhenReady(playWhenReady);
             player.seekTo(currentWindow, playbackPosition);
         }
-        MediaSource mediaSource = buildMediaSource(Uri.parse(getString(R.string.media_url_dash)));
-        player.prepare(mediaSource, true, false);
+        player.prepare(source, true, false);
     }
 
     private void releasePlayer() {
@@ -161,12 +176,11 @@ public class PlayerActivity extends AppCompatActivity {
     }
 
     private MediaSource buildMediaSource(Uri uri) {
-        DashChunkSource.Factory dashChunkSourceFactory = new DefaultDashChunkSource.Factory(
-                new DefaultHttpDataSourceFactory("ua", BANDWIDTH_METER));
-        DataSource.Factory manifestDataSourceFactory = new DefaultHttpDataSourceFactory("ua");
-        return new DashMediaSource.Factory(dashChunkSourceFactory, manifestDataSourceFactory).
-                createMediaSource(uri);
+        return new DashMediaSource.Factory(dataSourceFactory)
+                .createMediaSource(uri);
     }
+
+
 
     @SuppressLint("InlinedApi")
     private void hideSystemUi() {
