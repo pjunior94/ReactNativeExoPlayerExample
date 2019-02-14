@@ -181,8 +181,6 @@ public class PlayerActivity extends AppCompatActivity {
                 .createMediaSource(uri);
     }
 
-
-
     @SuppressLint("InlinedApi")
     private void hideSystemUi() {
         playerView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
