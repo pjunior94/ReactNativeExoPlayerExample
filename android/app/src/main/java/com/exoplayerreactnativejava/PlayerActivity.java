@@ -128,6 +128,7 @@ public class PlayerActivity extends AppCompatActivity {
                         keyRequestPropertiesArray[i + 1]);
             }
         }
+
         mediaDrm = FrameworkMediaDrm.newInstance(uuid);
         return new DefaultDrmSessionManager<>(uuid, mediaDrm, drmCallback, null, multiSession);
     }
