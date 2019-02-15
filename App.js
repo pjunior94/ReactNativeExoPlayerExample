@@ -23,10 +23,10 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-      {/* <Button
-        onPress={() => NativeModules.PlayerExample.startPlayer()}
-        title='Start example activity'
-            /> */}
+        <Button
+          onPress={() => NativeModules.PlayerExample.startPlayer()}
+          title='Start example activity'
+        />
       </View>
     );
   }

@@ -111,32 +111,7 @@ public class PlayerActivity extends AppCompatActivity {
 
     private String GenerateToken(){
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-        String entitlement_message = "\"version\": 1,\n" +
-                "  \"com_key_id\": \"3DB51E27-1E9D-4FB9-B515-A9DD00B77A14\",\n" +
-                "  \"message\": {\n" +
-                "    \"type\": \"entitlement_message\",\n" +
-                "    \"version\": 2,\n" +
-                "    \"content_keys_source\": {\n" +
-                "      \"inline\": [\n" +
-                "        {\n" +
-                "          \"id\": \"d9dbd0cd-de99-4e91-b3c3-1f7cbe640096\",\n" +
-                "          \"usage_policy\": \"Policy A\"\n" +
-                "        }\n" +
-                "      ]\n" +
-                "    },\n" +
-                "    \"content_key_usage_policies\": [\n" +
-                "      {\n" +
-                "        \"name\": \"Policy A\",\n" +
-                "        \"playready\": {\n" +
-                "          \"min_device_security_level\": 150,\n" +
-                "          \"play_enablers\": [\n" +
-                "            \"786627D8-C2A6-44BE-8F88-08AE255B01A7\"\n" +
-                "          ]\n" +
-                "        },\n" +
-                "        \"widevine\": {}\n" +
-                "      }\n" +
-                "    ]\n" +
-                "  }";
+        String entitlement_message = "{\"version\": 1,\"com_key_id\": \"3DB51E27-1E9D-4FB9-B515-A9DD00B77A14\",\"message\": {\"type\": \"entitlement_message\",\"version\": 2,\"content_keys_source\": {\"inline\": [{\"id\": \"d9dbd0cd-de99-4e91-b3c3-1f7cbe640096\",\"usage_policy\": \"Policy A\"}]},\"content_key_usage_policies\": [{\"name\": \"Policy A\",\"playready\": {\"min_device_security_level\": 150,\"play_enablers\": [\"786627D8-C2A6-44BE-8F88-08AE255B01A7\"]},\"widevine\": {}}]}}";
 
         LicenseToken = Jwts.builder().setPayload(entitlement_message).signWith(key).compact();
 
@@ -176,8 +151,10 @@ public class PlayerActivity extends AppCompatActivity {
             drmSessionManager =
                     buildDrmSessionManagerV18(
                             drmSchemeUuid, "https://drm-widevine-licensing.axtest.net/AcquireLicense", keyRequestPropertiesArray, false);
-        } catch (UnsupportedDrmException ex) {
-
+        }
+        catch (UnsupportedDrmException ex) {
+            System.out.println("Caught in main.");
+//            throw ex;
         }
 
 //        Uri uri = Uri.parse("https://media.axprod.net/TestVectors/v6-MultiDRM/Manifest_1080p.mpd");
