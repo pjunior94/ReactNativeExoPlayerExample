@@ -42,6 +42,8 @@ import java.util.UUID;
 
 import javax.crypto.SecretKey;
 
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
@@ -51,14 +53,16 @@ public class PlayerActivity extends AppCompatActivity {
     private static final DefaultBandwidthMeter BANDWIDTH_METER = new DefaultBandwidthMeter();
     private static final String CommunicationKeyId = "3DB51E27-1E9D-4FB9-B515-A9DD00B77A14";
 
-    protected static final String LicenseToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
-            "eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiNjllNTQwODgtZTllMC00NTMwLThjMWEtMWViNmRj" +
-            "ZDBkMTRlIiwibWVzc2FnZSI6eyJ0eXBlIjoiZW50aXRsZW1lbnRfbWVzc2FnZSIsInZlcnNpb24iOj" +
-            "IsImNvbnRlbnRfa2V5c19zb3VyY2UiOnsiaW5saW5lIjpbeyJpZCI6IjZlNWExZDI2LTI3NTctNDdkNy04MD" +
-            "Q2LWVhYTVkMWQzNGI1YSIsInVzYWdlX3BvbGljeSI6IlBvbGljeSBBIn1dfSwiY29udGVudF9rZXlfdXNhZ2Vf" +
-            "cG9saWNpZXMiOlt7Im5hbWUiOiJQb2xpY3kgQSIsInBsYXlyZWFkeSI6eyJtaW5fZGV2aWNlX3NlY3VyaXR5X2" +
-            "xldmVsIjoxNTAsInBsYXlfZW5hYmxlcnMiOlsiNzg2NjI3RDgtQzJBNi00NEJFLThGODgtMDhBRTI1NUIwMUE" +
-            "3Il19LCJ3aWRldmluZSI6e319XX19.1ie6MpTxLn8fNz29ERynMaMOnuRI2sSAxLhBysLybac";
+    protected static String LicenseToken = "";
+
+//    protected static final String LicenseToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
+//            "eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiNjllNTQwODgtZTllMC00NTMwLThjMWEtMWViNmRj" +
+//            "ZDBkMTRlIiwibWVzc2FnZSI6eyJ0eXBlIjoiZW50aXRsZW1lbnRfbWVzc2FnZSIsInZlcnNpb24iOj" +
+//            "IsImNvbnRlbnRfa2V5c19zb3VyY2UiOnsiaW5saW5lIjpbeyJpZCI6IjZlNWExZDI2LTI3NTctNDdkNy04MD" +
+//            "Q2LWVhYTVkMWQzNGI1YSIsInVzYWdlX3BvbGljeSI6IlBvbGljeSBBIn1dfSwiY29udGVudF9rZXlfdXNhZ2Vf" +
+//            "cG9saWNpZXMiOlt7Im5hbWUiOiJQb2xpY3kgQSIsInBsYXlyZWFkeSI6eyJtaW5fZGV2aWNlX3NlY3VyaXR5X2" +
+//            "xldmVsIjoxNTAsInBsYXlfZW5hYmxlcnMiOlsiNzg2NjI3RDgtQzJBNi00NEJFLThGODgtMDhBRTI1NUIwMUE" +
+//            "3Il19LCJ3aWRldmluZSI6e319XX19.1ie6MpTxLn8fNz29ERynMaMOnuRI2sSAxLhBysLybac";
 
     private FrameworkMediaDrm mediaDrm;
     protected String userAgent;
@@ -115,6 +119,40 @@ public class PlayerActivity extends AppCompatActivity {
         return new DefaultHttpDataSourceFactory(userAgent);
     }
 
+    private String GenerateToken(){
+        Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        String entitlement_message = "\"version\": 1,\n" +
+                "  \"com_key_id\": \"3DB51E27-1E9D-4FB9-B515-A9DD00B77A14\",\n" +
+                "  \"message\": {\n" +
+                "    \"type\": \"entitlement_message\",\n" +
+                "    \"version\": 2,\n" +
+                "    \"content_keys_source\": {\n" +
+                "      \"inline\": [\n" +
+                "        {\n" +
+                "          \"id\": \"d9dbd0cd-de99-4e91-b3c3-1f7cbe640096\",\n" +
+                "          \"usage_policy\": \"Policy A\"\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    \"content_key_usage_policies\": [\n" +
+                "      {\n" +
+                "        \"name\": \"Policy A\",\n" +
+                "        \"playready\": {\n" +
+                "          \"min_device_security_level\": 150,\n" +
+                "          \"play_enablers\": [\n" +
+                "            \"786627D8-C2A6-44BE-8F88-08AE255B01A7\"\n" +
+                "          ]\n" +
+                "        },\n" +
+                "        \"widevine\": {}\n" +
+                "      }\n" +
+                "    ]\n" +
+                "  }";
+
+        LicenseToken = Jwts.builder().setPayload(entitlement_message).signWith(key).compact();
+
+        return LicenseToken;
+    }
+
     private DefaultDrmSessionManager<FrameworkMediaCrypto> buildDrmSessionManagerV18(
             UUID uuid, String licenseUrl,
             String[] keyRequestPropertiesArray,
@@ -142,7 +180,7 @@ public class PlayerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         DefaultDrmSessionManager<FrameworkMediaCrypto> drmSessionManager = null;
         UUID drmSchemeUuid = Util.getDrmUuid("widevine");
-        String[] keyRequestPropertiesArray = new String[]{"X-AxDRM-Message", LicenseToken};
+        String[] keyRequestPropertiesArray = new String[]{"X-AxDRM-Message", GenerateToken()};
 
         try {
             drmSessionManager =
@@ -152,7 +190,8 @@ public class PlayerActivity extends AppCompatActivity {
 
         }
 
-        Uri uri = Uri.parse("https://media.axprod.net/TestVectors/v6-MultiDRM/Manifest_1080p.mpd");
+//        Uri uri = Uri.parse("https://media.axprod.net/TestVectors/v6-MultiDRM/Manifest_1080p.mpd");
+        Uri uri = Uri.parse("http://192.168.1.177/manifest.mpd");
         MediaSource source = buildMediaSource(uri);
 
 
