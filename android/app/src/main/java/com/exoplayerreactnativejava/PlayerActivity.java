@@ -16,7 +16,9 @@ import android.view.View;
 
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
+import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.drm.DefaultDrmSessionManager;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -60,7 +62,7 @@ public class PlayerActivity extends AppCompatActivity {
     private static final String CommunicationKeyId = "3DB51E27-1E9D-4FB9-B515-A9DD00B77A14";
 
     protected static String LicenseToken = "";
-    protected static String WidevinePssh = "AAAANHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABQIARIQblodJidXR9eARuql0dNLWg==";
+    protected static String WidevinePssh = "AAAATnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAC4IARIQk88GjArySBSYQHg9ep8olhoGYXhpbm9tIhCTzwaMCvJIFJhAeD16nyiW";
 
     protected OfflineLicenseHelper offlineLicenseHelper = null;
 
@@ -74,7 +76,9 @@ public class PlayerActivity extends AppCompatActivity {
             "3Il19LCJ3aWRldmluZSI6e319XX19.1ie6MpTxLn8fNz29ERynMaMOnuRI2sSAxLhBysLybac";
 
     protected static final String Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiNjllNTQwODgtZTllMC00NTMwLThjMWEtMWViNmRjZDBkMTRlIiwibWVzc2FnZSI6eyJ0eXBlIjoiZW50aXRsZW1lbnRfbWVzc2FnZSIsInZlcnNpb24iOjIsImNvbnRlbnRfa2V5c19zb3VyY2UiOnsiaW5saW5lIjpbeyJpZCI6IjZlNWExZDI2LTI3NTctNDdkNy04MDQ2LWVhYTVkMWQzNGI1YSIsInVzYWdlX3BvbGljeSI6IlBvbGljeSBBIn1dfSwiY29udGVudF9rZXlfdXNhZ2VfcG9saWNpZXMiOlt7Im5hbWUiOiJQb2xpY3kgQSIsInBsYXlyZWFkeSI6eyJtaW5fZGV2aWNlX3NlY3VyaXR5X2xldmVsIjoxNTAsInBsYXlfZW5hYmxlcnMiOlsiNzg2NjI3RDgtQzJBNi00NEJFLThGODgtMDhBRTI1NUIwMUE3Il19LCJ3aWRldmluZSI6e319XX19.1ie6MpTxLn8fNz29ERynMaMOnuRI2sSAxLhBysLybac";
-    protected static final String TokenWithPersistence = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiNjllNTQwODgtZTllMC00NTMwLThjMWEtMWViNmRjZDBkMTRlIiwiYWxsb3dfcGVyc2lzdGFuY2UiOnRydWUsIm1lc3NhZ2UiOnsidHlwZSI6ImVudGl0bGVtZW50X21lc3NhZ2UiLCJ2ZXJzaW9uIjoyLCJhbGxvd19wZXJzaXN0YW5jZSI6dHJ1ZSwibGljZW5zZSI6eyJhbGxvd19wZXJzaXN0ZW5jZSI6dHJ1ZX0sImNvbnRlbnRfa2V5c19zb3VyY2UiOnsiaW5saW5lIjpbeyJpZCI6IjZlNWExZDI2LTI3NTctNDdkNy04MDQ2LWVhYTVkMWQzNGI1YSIsInVzYWdlX3BvbGljeSI6IlBvbGljeSBBIn1dfSwiY29udGVudF9rZXlfdXNhZ2VfcG9saWNpZXMiOlt7Im5hbWUiOiJQb2xpY3kgQSIsInBsYXlyZWFkeSI6eyJtaW5fZGV2aWNlX3NlY3VyaXR5X2xldmVsIjoxNTAsInBsYXlfZW5hYmxlcnMiOlsiNzg2NjI3RDgtQzJBNi00NEJFLThGODgtMDhBRTI1NUIwMUE3Il19LCJ3aWRldmluZSI6e319XX19.vmfg913vMGKIObigOeeXkMHgtwJsLR-7bG24mGS-7M0";
+//    protected static final String TokenWithPersistence = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiNjllNTQwODgtZTllMC00NTMwLThjMWEtMWViNmRjZDBkMTRlIiwiYWxsb3dfcGVyc2lzdGFuY2UiOnRydWUsIm1lc3NhZ2UiOnsidHlwZSI6ImVudGl0bGVtZW50X21lc3NhZ2UiLCJ2ZXJzaW9uIjoyLCJhbGxvd19wZXJzaXN0YW5jZSI6dHJ1ZSwibGljZW5zZSI6eyJhbGxvd19wZXJzaXN0ZW5jZSI6dHJ1ZX0sImNvbnRlbnRfa2V5c19zb3VyY2UiOnsiaW5saW5lIjpbeyJpZCI6IjZlNWExZDI2LTI3NTctNDdkNy04MDQ2LWVhYTVkMWQzNGI1YSIsInVzYWdlX3BvbGljeSI6IlBvbGljeSBBIn1dfSwiY29udGVudF9rZXlfdXNhZ2VfcG9saWNpZXMiOlt7Im5hbWUiOiJQb2xpY3kgQSIsInBsYXlyZWFkeSI6eyJtaW5fZGV2aWNlX3NlY3VyaXR5X2xldmVsIjoxNTAsInBsYXlfZW5hYmxlcnMiOlsiNzg2NjI3RDgtQzJBNi00NEJFLThGODgtMDhBRTI1NUIwMUE3Il19LCJ3aWRldmluZSI6e319XX19.vmfg913vMGKIObigOeeXkMHgtwJsLR-7bG24mGS-7M0";
+    protected static final String TokenWithPersistence = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiM0RCNTFFMjctMUU5RC00RkI5LUI1MTUtQTlERDAwQjc3QTE0IiwiYWxsb3dfcGVyc2lzdGFuY2UiOnRydWUsIm1lc3NhZ2UiOnsidHlwZSI6ImVudGl0bGVtZW50X21lc3NhZ2UiLCJ2ZXJzaW9uIjoyLCJhbGxvd19wZXJzaXN0YW5jZSI6dHJ1ZSwibGljZW5zZSI6eyJhbGxvd19wZXJzaXN0ZW5jZSI6dHJ1ZX0sImNvbnRlbnRfa2V5c19zb3VyY2UiOnsiaW5saW5lIjpbeyJpZCI6IjkzY2YwNjhjLTBhZjItNDgxNC05ODQwLTc4M2Q3YTlmMjg5NiIsInVzYWdlX3BvbGljeSI6IlBvbGljeSBBIn1dfSwiY29udGVudF9rZXlfdXNhZ2VfcG9saWNpZXMiOlt7Im5hbWUiOiJQb2xpY3kgQSIsInBsYXlyZWFkeSI6eyJtaW5fZGV2aWNlX3NlY3VyaXR5X2xldmVsIjoxNTAsInBsYXlfZW5hYmxlcnMiOlsiNzg2NjI3RDgtQzJBNi00NEJFLThGODgtMDhBRTI1NUIwMUE3Il19LCJ3aWRldmluZSI6e319XX19.yBFfkLgHvc1AY9c-qNzeRYlfAR8yXmlgidk75MF5mBE";
+
 
     private FrameworkMediaDrm mediaDrm;
     protected String userAgent;
@@ -252,7 +256,7 @@ public class PlayerActivity extends AppCompatActivity {
         try {
             drmSessionManager =
                     buildDrmSessionManagerV18(
-                            drmSchemeUuid, "https://drm-widevine-licensing.axtest.net/AcquireLicense", keyRequestPropertiesArray, false);
+                            drmSchemeUuid, "https://drm-widevine-licensing.axtest312321312.net/AcquireLicense", keyRequestPropertiesArray, false);
         }
         catch (UnsupportedDrmException ex) {
             System.out.println("Caught in main.");
@@ -276,7 +280,7 @@ public class PlayerActivity extends AppCompatActivity {
             DrmSession.DrmSessionException ex = exception;
         }
 
-        Uri uri = Uri.parse("https://media.axprod.net/TestVectors/v6-MultiDRM/Manifest_1080p.mpd");
+        Uri uri = Uri.parse("http://192.168.1.177/manifest.mpd");
 
         drmSessionManager.setMode(DefaultDrmSessionManager.MODE_PLAYBACK, license);
 
@@ -287,6 +291,13 @@ public class PlayerActivity extends AppCompatActivity {
             playerView.setPlayer(player);
             player.setPlayWhenReady(playWhenReady);
             player.seekTo(currentWindow, playbackPosition);
+
+            player.addListener(new Player.EventListener() {
+                @Override
+                public void onPlayerError(ExoPlaybackException error) {
+                    ExoPlaybackException err = error;
+                }
+            });
         }
         player.prepare(source, true, false);
     }
